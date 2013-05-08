@@ -80,7 +80,7 @@ Css Examples
     	}
 
     </style>
- <div>
+ </div>
 </code></pre>
 
 License
