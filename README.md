@@ -45,6 +45,7 @@ Css Examples
 2. Inheritance - Uses the following syntax {selector} @{inheritedClassName}(|{additionalClassName})
 
 <pre><code>
+<div>
     <style type="text/css">
         /*Cssr      
         var baseCalc = (100+30)-30;  
@@ -79,6 +80,7 @@ Css Examples
     	}
 
     </style>
+ <div>
 </code></pre>
 
 License
