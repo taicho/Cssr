@@ -69,7 +69,7 @@ Css Examples
         .my-div  @my-foreground
         {
         
-        	background-color:@blue;
+        	background-color:@blueVariable;
         	width:@anotherCalc;
         }
 
@@ -79,7 +79,7 @@ Css Examples
     	}
 
     </style>
-</pre></code>
+</code></pre>
 
 License
 =======
