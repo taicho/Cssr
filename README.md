@@ -1,7 +1,9 @@
-Cssr ()
+Cssr (/ˈsiːzə/)
 ====
 
 Cssr:  Run-time Dynamic CSS Engine
+
+In addition to allowing the use of variables and inheritance, Cssr automatically creates a relationship between your variables and the StyleSheets within your document, allowing you to change the variables at run-time.
 
 
 Usage
