@@ -18,7 +18,7 @@ Css Examples
 
 1. Variables - Simply add /*Cssr {variables here} */ to the top of your stylesheets.
 
-    <style type="text/css">
+<pre><code>
         /*Cssr      
         var baseCalc = (100+30)-30;  
         var anotherCalc = (@baseCalc * 3) + "px";            
@@ -29,8 +29,8 @@ Css Examples
 
         .my-div
         {
-        	background-color:@blue;
-        	width:@anotherCalc;
+            background-color:@blue;
+            width:@anotherCalc;
         }
 
         body
@@ -38,14 +38,13 @@ Css Examples
             background:@green;
         }
 
-    </style>
-
-
+    </style>     
+</code></pre>
 
 
 2. Inheritance - Uses the following syntax {selector} @{inheritedClassName}(|{additionalClassName})
 
-
+<pre><code>
     <style type="text/css">
         /*Cssr      
         var baseCalc = (100+30)-30;  
@@ -80,7 +79,7 @@ Css Examples
     	}
 
     </style>
-
+</pre></code>
 
 License
 =======
