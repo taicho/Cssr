@@ -126,6 +126,7 @@ Will resolve to:
         {
     		color:rgba(255,0,0,1.0);
 		}
+		
 
 		.my-background
 		{
