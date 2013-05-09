@@ -136,7 +136,7 @@ Will resolve to:
 
         .my-div  @my-foreground
         {
-        
+        	color:rgba(255,0,0,1.0); /* added from my-foreground */	
         	background-color:rgba(0,0,255,1.0);
         	width:300px;
         }
