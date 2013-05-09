@@ -152,6 +152,23 @@ Will resolve to:
 </code></pre>
 
 
+3. Pre-apply Modification/Addition of Variables
+
+	Variables can be added or overriden at runtime before application of Cssr by calling the following method:
+
+	// i.e. Cssr.addVariable("blue","rgba(255,0,0,1.0)");
+	// Adds a "blue" variable with the provided value OR if blue variable was defined in CSS will override that value before the apply happens.
+	Cssr.changeVariables(name,value); 
+
+
+
+4. Post-apply Modification of Variables
+	Variables can be modified at runtime after application of Cssr by calling the following method:
+
+	// i.e. Cssr.changeVariable("blue","rgba(255,0,0,1.0)");
+	// Changes all "blue" variables to the provided value.
+	Cssr.changeVariables(name,value); 
+
 License
 =======
 The MIT License (MIT)
