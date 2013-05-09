@@ -16,7 +16,7 @@ Note - variables MUST be declared inside of the /*Cssr */ comment in your style 
 Css Examples
 ============
 
-1. Variables - Simply add /*Cssr {variables here} */ to the top of your stylesheets.
+1. Variables - Simply add /*Cssr {variables here} */ to the top of your stylesheets. Variable declarations and their assigned expressions follow standard JavaScript conventions are in fact evaluated in the global scope - you can use any JavaScript you can think of...
 
 <pre><code>
         /*Cssr      
@@ -45,7 +45,6 @@ Css Examples
 2. Inheritance - Uses the following syntax {selector} @{inheritedClassName}(|{additionalClassName})
 
 <pre><code>
-<div>
     <style type="text/css">
         /*Cssr      
         var baseCalc = (100+30)-30;  
@@ -80,7 +79,6 @@ Css Examples
     	}
 
     </style>
- </div>
 </code></pre>
 
 License
