@@ -162,10 +162,10 @@ Will resolve to:
 	Cssr.addVariable(name,value); 
 	</code></pre>
 
-<pre><code>
 4. Post-apply Modification of Variables
 	Variables can be modified at runtime after application of Cssr by calling the following method:
 
+	<pre><code>
 	// i.e. Cssr.changeVariable("blue","rgba(255,0,0,1.0)");
 	// Changes all "blue" variables to the provided value.
 	Cssr.changeVariable(name,value); 
