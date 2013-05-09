@@ -20,8 +20,6 @@
 			background-color:@redVariable;
 		}
 
-		/* Using inheritance */
-
         .my-div  @my-foreground
         {
         
@@ -42,20 +40,19 @@
         }
 
     </style>  
-    <script type="text/javascript" src="Cssr.min.js"></script>
-    <script type="text/javascript">
-        document.onload = function()
-        {
-            document.getElementById("changeButton").onclick = function () {
-                Cssr.changeVariable("blueVariable", "rgba(0,255,0,1.0)");
-            };
-        }
-    </script>    
+    <script type="text/javascript" src="Cssr.js"></script> 
     <title>Cssr Test</title>
 </head>
 <body class="my-background">
-    <div class="box"></div>
+    <div class="box">Testing</div>
 
-    <button id="changeButton">Change all variables named blue to a green value!</button>
+    <button id="changeButton">Change all variables named redVariable to a green value!</button>
+
+
+    <script type="text/javascript">
+            document.getElementById("changeButton").onclick = function () {
+                Cssr.changeVariable("redVariable", "rgba(0,255,0,1.0)");
+            };
+    </script>   
 </body>
 </html>
