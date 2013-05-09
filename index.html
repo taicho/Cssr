@@ -36,17 +36,26 @@
 
         .box @my-foreground
         {
+            background-color:yellow;
             width:@anotherCalc;
             height:@anotherCalc;
         }
 
     </style>  
-    <script type="text/javascript" src="Cssr.min.js"></script>    
+    <script type="text/javascript" src="Cssr.min.js"></script>
+    <script type="text/javascript">
+        document.onload = function()
+        {
+            document.getElementById("changeButton").onclick = function () {
+                Cssr.changeVariable("blueVariable", "rgba(0,255,0,1.0)");
+            };
+        }
+    </script>    
     <title>Cssr Test</title>
 </head>
 <body class="my-background">
     <div class="box"></div>
 
-    <button>Change all variables named blue to a green value!</button>
+    <button id="changeButton">Change all variables named blue to a green value!</button>
 </body>
 </html>
