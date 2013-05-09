@@ -213,5 +213,12 @@ var Cssr;
         parse(document.querySelectorAll("style"));
     }
     Cssr.apply = apply;
+    if(document.readyState === "complete") {
+        Cssr.apply();
+    } else {
+        document.addEventListener('DOMContentLoaded', function () {
+            Cssr.apply();
+        });
+    }
 })(Cssr || (Cssr = {}));
 //@ sourceMappingURL=Cssr.js.map
