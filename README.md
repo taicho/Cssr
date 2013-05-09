@@ -19,6 +19,7 @@ Css Examples
 1. Variables - Simply add /*Cssr {variables here} */ to the top of your stylesheets. Variable declarations and their assigned expressions follow standard JavaScript conventions are in fact evaluated in the global scope - you can use any JavaScript you can think of...
 
 <pre><code>
+	<style type='text/css'>
         /*Cssr      
         var baseCalc = (100+30)-30;  
         var anotherCalc = (@baseCalc * 3) + "px";            
@@ -41,6 +42,33 @@ Css Examples
     </style>     
 </code></pre>
 
+Will resolve to:
+
+<pre><code>
+	<style type='text/css'>
+        /*Cssr      
+        var baseCalc = (100+30)-30;  
+        var anotherCalc = (@baseCalc * 3) + "px";            
+        var red = "rgba(255,0,0,1.0)";
+        var green = "rgba(0,255,0,1.0)";
+        var blue = "rgba(0,0,255,1.0)"
+        */
+
+        .my-div
+        {
+            background-color:rgba(0,0,255,1.0);
+            width:300px;
+        }
+
+        body
+        {
+            background:rgba(0,255,0,1.0);
+        }
+
+    </style>     
+</code></pre>
+
+
 
 2. Inheritance - Uses the following syntax {selector} @{inheritedClassName}(|{additionalClassName})
 
@@ -51,7 +79,7 @@ Css Examples
         var anotherCalc = (@baseCalc * 3) + "px";            
         var redVariable = "rgba(255,0,0,1.0)";
         var greenVariable = "rgba(0,255,0,1.0)";
-        var blueVariable = "rgba(0,0,255,1.0)"
+        var blueVariable = "rgba(0,0,255,1.0)";
         */
 
         .my-foreground
@@ -80,6 +108,49 @@ Css Examples
 
     </style>
 </code></pre>
+
+
+Will resolve to:
+
+<pre><code>
+	<style type='text/css'>
+        /*Cssr      
+        var baseCalc = (100+30)-30;  
+        var anotherCalc = (@baseCalc * 3) + "px";            
+        var redVariable = "rgba(255,0,0,1.0)";
+        var greenVariable = "rgba(0,255,0,1.0)";
+        var blueVariable = "rgba(0,0,255,1.0)";
+        */
+
+        .my-foreground
+        {
+    		color:rgba(255,0,0,1.0);
+		}
+
+		.my-background
+		{
+			background-color:rgba(0,0,255,1.0);
+		}
+
+		/* Using inheritance */
+
+        .my-div  @my-foreground
+        {
+        
+        	background-color:rgba(0,0,255,1.0);
+        	width:300px;
+        }
+
+        .multiple-inheritance @my-foreground|my-background
+        {
+        	color:rgba(255,0,0,1.0); /* added from my-foreground */	
+        	background-color:rgba(0,0,255,1.0); /* added from my-background */
+        	visibility:visible;
+    	}
+
+    </style>     
+</code></pre>
+
 
 License
 =======
