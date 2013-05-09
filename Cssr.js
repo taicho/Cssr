@@ -27,6 +27,36 @@ var Cssr;
     };
     var sheets = [];
     var rules = [];
+    Cssr.Variables = {
+    };
+    function addVariableHelper(name) {
+        Object.defineProperty(Cssr.Variables, name, {
+            get: function () {
+                var returnVal = null;
+                rules.forEach(function (r) {
+                    if(r[name]) {
+                        var val = r[name];
+                        returnVal = val[0].getValue();
+                        return false;
+                    }
+                });
+                return returnVal;
+            },
+            set: function (value) {
+                rules.forEach(function (r) {
+                    if(r[name]) {
+                        var val = r[name];
+                        val.forEach(function (obj) {
+                            obj.changeProperty(value);
+                        });
+                        return;
+                    }
+                });
+            },
+            enumerable: true,
+            configurable: true
+        });
+    }
     var VariableContainer = (function () {
         function VariableContainer(Rule, Sheet, Property) {
             this.Rule = Rule;
@@ -35,6 +65,9 @@ var Cssr;
         }
         VariableContainer.prototype.changeProperty = function (value) {
             this.Rule.style.setProperty(this.Property, value);
+        };
+        VariableContainer.prototype.getValue = function () {
+            return this.Rule.style.getPropertyValue(this.Property);
         };
         return VariableContainer;
     })();    
@@ -157,6 +190,7 @@ var Cssr;
                             var propertyArr = keyReg.exec(fullText);
                             while(propertyArr != null) {
                                 properties.push(new VariableContainer(rule, sheet, propertyArr[1].trim()));
+                                addVariableHelper(key);
                                 propertyArr = keyReg.exec(fullText);
                             }
                             rules[key] = properties;
